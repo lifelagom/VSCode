@@ -18,8 +18,24 @@ string[] GenerateArray(int size) {
     return array;
 }
 
+// Генерация массива из строк до 3 символов
+string[] GenerateNewArray(string[] array) {
+    string[] newArray = new string[array.Length];
+    int index =  0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length<=3) {
+            newArray[index]=array[i];
+            index += 1;
+        }
+    }
+    Array.Resize(ref newArray, index);
+    return newArray;
+}
+
 // Основной код
 Console.Write("Введите размер массива: ");
 int size = int.Parse(Console.ReadLine()!);
 string[] array = GenerateArray(size);
-Console.Write("[“"+string.Join("”, “",array)+"”] → ");
+string[] newArray = GenerateNewArray(array);
+Console.Write("[“"+string.Join("”, “",array)+"”] → "+"[“"+string.Join("”, “",newArray)+"”]");
