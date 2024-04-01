@@ -7,3 +7,19 @@
 // [“1234”, “1567”, “-2”, “computer science”] → [“-2”]
 // [“Russia”, “Denmark”, “Kazan”] → []
 
+// Генерация массива
+string[] GenerateArray(int size) {
+    string[] array = new string[size];
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write("Введите элемент массива: ");
+        array[i]=Console.ReadLine()!;
+    }
+    return array;
+}
+
+// Основной код
+Console.Write("Введите размер массива: ");
+int size = int.Parse(Console.ReadLine()!);
+string[] array = GenerateArray(size);
+Console.Write("[“"+string.Join("”, “",array)+"”] → ");
